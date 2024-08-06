@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="images/fevlicon.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
+        integrity="sha512-OQDNdI5rpnZ0BRhhJc+btbbtnxaj+LdQFeh0V9/igiEPDiWE2fG+ZsXl0JEH+bjXKPJ3zcXqNyP4/F/NegVdZg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"
+        integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <title>Book My Show</title>
+
+    <style>
+        * {
+            text-decoration: none;
+            color: black;
+        }
+
+        .mobile-nav {
+            display: none;
+        }
+
+        .logo {
+            width: 10%;
+            height: 40px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+        }
+
+        .search {
+            position: relative;
+            border: 1px solid rgb(196, 196, 196);
+            width: 50%;
+            padding: 5px 20px;
+            border-radius: 5px;
+        }
+
+        .search i {
+            position: absolute;
+            top: 6px;
+            left: 2px;
+            font: 15px;
+            color: rgb(196, 196, 196);
+        }
+
+        .search input {
+            border: none;
+            width: 100%;
+            outline: none;
+        }
+
+        .link {
+            border: 1px solid rgb(211, 211, 211);
+            transition: all 0.5s ease-in-out;
+        }
+
+        .link:hover {
+            background-color: rgb(211, 211, 211);
+            border: none;
+        }
+
+        .contact {
+            width: 20%;
+            height: 20px;
+        }
+
+        .contact img {
+            width: 35px;
+            height: 20px;
+        }
+
+        .contact input {
+            border: none;
+            border-bottom: 1px solid grey;
+            width: 75%;
+        }
+
+        .hidden-cities {
+            display: none;
+        }
+
+        #link {
+            cursor: pointer;
+        }
+
+        .links {
+            border-bottom: 1px solid rgb(187, 185, 185);
+            padding: 10px 0px;
+            width: 100%;
+        }
+
+        .disabled {
+            border-bottom: 1px solid rgb(187, 185, 185);
+            padding: 10px 0px;
+            color: rgb(150, 149, 149);
+        }
+
+        .links:hover {
+            background-color: rgb(245, 245, 245);
+        }
+
+        .banner {
+            background-color: rgb(43, 49, 73);
+            width: 100%;
+            height: auto;
+        }
+
+        .banner-container {
+            background-color: rgb(43, 49, 73);
+            width: auto;
+            height: auto;
+        }
+
+        .sub-footer{
+            display: block;
+            background-color: #404043;
+            height: 30%;
+            padding: 20px 0px;
+        }
+
+        .footer{
+            display: block;
+            background-color: #333338;
+            height: 30%;
+            padding: 20px 0px;
+            color: white;
+        }
+
+        .box a{
+            color: rgb(179, 176, 176);
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .box a:hover{
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+
+        .social{
+            width: 100%;
+        }
+
+        .social-container{
+            width: 27%;
+            margin: auto;
+            text-align: center;
+            padding: 10px 0px;
+        }
+
+        .social-container i{
+            font-size: 20px;
+            color: rgb(126, 126, 126);
+            margin: auto;
+            padding: 10px 15px;
+            border-radius: 50%;
+            background-color: #444444;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .social-container i:hover{
+            background-color: #d3d0d0;
+            color: #2B3148;
+        }
+
+
+
+        @media (max-width:767px) {
+            .mobile-nav {
+                display: block;
+                width: 100%;
+                height: 60px;
+            }
+
+            .nav-link {
+                width: auto;
+                height: auto;
+            }
+
+            .nav-image {
+                width: 50%;
+                height: 50%;
+            }
+
+            .nav-image img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .navbar {
+                display: none;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .search {
+                display: none;
+            }
+
+            .location {
+                display: none;
+            }
+
+            .login {
+                display: none;
+            }
+
+            .banner {
+                background-color: rgb(43, 49, 73);
+                width: 100%;
+                height: auto;
+            }
+
+            .banner-container {
+                background-color: rgb(43, 49, 73);
+                width: auto;
+                height: auto;
+            }
+        }
+
+        @media (min-width:768px) and (max-width:768px) {
+            .mobile-nav {
+                display: block;
+                width: 100%;
+                height: 60px;
+            }
+
+            .nav-link {
+                width: 50%;
+                height: 50%;
+            }
+
+            .nav-image {
+                width: 50%;
+                height: 50%;
+            }
+
+            .nav-image img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .logo {
+                display: none;
+            }
+
+            .search {
+                display: block;
+                width: 80%;
+            }
+
+            .location {
+                display: none;
+            }
+
+            .login {
+                display: none;
+            }
+
+            .banner {
+                background-color: rgb(43, 49, 73);
+                width: 100%;
+                height: auto;
+            }
+
+            .banner-container {
+                background-color: rgb(43, 49, 73);
+                width: auto;
+                height: auto;
+            }
+        }
+
+        @media (max-width:991px){
+            .sub-footer{
+                display: none;
+            }
+            .footer{
+                display: none;
+            }
+        }
+
+        @media (max-width: 999px) {
+            .mobile-nav {
+                display: flex;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                background-color: #fff;
+                border-top: 1px solid #ccc;
+                z-index: 1000;
+            }
+
+            .mobile-nav {
+                display: block;
+                width: 100%;
+                height: 60px;
+            }
+
+            .nav-link {
+                width: auto;
+                height: auto;
+            }
+
+            .nav-image {
+                width: 50%;
+                height: 50%;
+            }
+
+            .nav-image img {
+                width: 100%;
+                height: 100%;
+            }
+
+            .banner {
+                background-color: rgb(43, 49, 73);
+                width: 100%;
+                height: auto;
+            }
+
+            .banner-container {
+                background-color: rgb(43, 49, 73);
+                width: auto;
+                height: auto;
+            }
+
+            .footer{
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="mobile-nav text-center d-flex justify-content-evenly d-lg-none">
+        <div class="nav-link">
+            <div class="nav-image">
+                <img src="images/fevlicon.png" alt="">
+            </div>
+            <h5>Home</h5>
+        </div>
+        <div class="nav-link">
+            <i class="ri-live-fill"></i>
+            <h5>Movies</h5>
+        </div>
+        <div class="nav-link">
+            <i class="ri-coupon-3-fill"></i>
+            <h5>Live Stream</h5>
+        </div>
+        <div class="nav-link">
+            <i class="ri-user-fill"></i>
+            <h5>Profile</h5>
+        </div>
+    </div>
+
+
+    <div class="navbar navbar-light bg-white">
+        <div class="container d-flex justify-content-around">
+            <div class="navbar-brand logo">
+                <a href="index.html"><img src="images/logo.png" alt=""></a>
+            </div>
+            <div class="search">
+                <i class="ri-search-line"></i>
+                <input type="search" placeholder="search for movies, Events, plays, sports & Activities">
+            </div>
+
+            <a href="" class="text-decoration-none text-dark location" data-bs-target="#location"
+                data-bs-toggle="modal">Location <i class="ri-arrow-down-wide-fill"></i></a>
+
+            <button class="btn">
+                <a href="" class="btn bg-danger text-light login" data-bs-target="#sign-in" data-bs-toggle="modal">Sign
+                    in</a>
+            </button>
+
+            <div class="navbar-toggler icon" type="button" data-bs-target="#sidemenu" data-bs-toggle="offcanvas">
+                <span class="navbar-toggler-icon"></span>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="modal box fade" tabindex="-1" id="location">
+        <div class="modal-dialog modal-xl w-100">
+            <div class="modal-content">
+                <div class="modal-header d-inline-block mt-2 mb-2">
+                    <div class="search w-100">
+                        <i class="ri-search-line"></i>
+                        <input type="search" placeholder="search for movies, Events, plays, sports & Activities">
+                    </div>
+
+                    <a href="" class="text-danger mt-2 text-decoration-none"><i
+                            class="ri-crosshair-2-line text-danger text-decoration-none"></i> detect my location</a>
+                </div>
+                <p class="text-center">Popular City</p>
+                <div class="container-fluid text-center">
+                    <div class="row justify-content-evenly">
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-1 text-center mb-4 flex-xl-wrap">
+                            <img src="images/mumbai-selected.png" alt="Mumbai" class="img-fluid">
+                            <p class="fs-6 text-center ">Mumbai</p>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-1 text-center mb-4 flex-xl-wrap">
+                            <img src="images/ncr.png" alt="Delhi-NCR" class="img-fluid">
+                            <p class="fs-6 text-center">Delhi-NCR</p>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-1 text-center mb-4 flex-xl-wrap">
+                            <img src="images/bang.png" alt="Bengaluru" class="img-fluid">
+                            <p class="fs-6 text-center">Bengaluru</p>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-1 text-center mb-4 flex-xl-wrap">
+                            <img src="images/hyd.png" alt="Hyderabad" class="img-fluid">
+                            <p class="fs-6 text-center">Hyderabad</p>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-1 text-center mb-4 flex-xl-wrap">
+                            <img src="images/chadigard.png" alt="Chandigarh" class="img-fluid">
+                            <p class="fs-6 text-center">Chandigarh</p>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-1 text-center mb-4 flex-xl-wrap">
+                            <img src="images/Ahmedabad.png" alt="Ahmedabad" class="img-fluid">
+                            <p class="fs-6 text-center">Ahmedabad</p>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-1 text-center mb-4 flex-xl-wrap">
+                            <img src="images/pune.png" alt="Pune" class="img-fluid">
+                            <p class="fs-6 text-center">Pune</p>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-1 text-center mb-4 flex-xl-wrap">
+                            <img src="images/chennai.png" alt="Chennai" class="img-fluid">
+                            <p class="fs-6 text-center">Chennai</p>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-1 text-center mb-4 flex-xl-wrap">
+                            <img src="images/kolkata.png" alt="Kolkata" class="img-fluid">
+                            <p class="fs-6 text-center">Kolkata</p>
+                        </div>
+                        <div class="col-6 col-sm-4 col-md-3 col-lg-1 text-center mb-4 flex-xl-wrap">
+                            <img src="images/kochi.png" alt="Kochi" class="img-fluid">
+                            <p class="fs-6 text-center">Kochi</p>
+                        </div>
+                    </div>
+                    <p class="text-center text-danger" id="link">Other Cities</p>
+                    <div class="container-fluid d-flex justify-content-evenly">
+                        <div class="hidden-cities">
+                            <p>Aalo</p>
+                            <p>Addanki</p>
+                            <p>Agar Malwa</p>
+                            <p>Ahmednagar</p>
+                        </div>
+                        <div class="hidden-cities">
+                            <p>Aalo</p>
+                            <p>Addanki</p>
+                            <p>Agar Malwa</p>
+                            <p>Ahmednagar</p>
+                        </div>
+                        <div class="hidden-cities">
+                            <p>Aalo</p>
+                            <p>Addanki</p>
+                            <p>Agar Malwa</p>
+                            <p>Ahmednagar</p>
+                        </div>
+                        <div class="hidden-cities">
+                            <p>Aalo</p>
+                            <p>Addanki</p>
+                            <p>Agar Malwa</p>
+                            <p>Ahmednagar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" tabindex="-1" id="sign-in">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="text-center w-100">Get Started</h3>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="link d-flex text-center justify-content-evenly align-item-center btn mb-4 mt-1">
+                        <i class="ri-google-fill"></i>
+                        <p>Continue with Google</p>
+                    </div>
+                    <div class="link d-flex text-center justify-content-evenly align-item-center btn mb-4">
+                        <i class="ri-mail-line"></i>
+                        <p>Continue with Mail</p>
+                    </div>
+                    <div class="link d-flex text-center justify-content-evenly align-item-center btn mb-4">
+                        <i class="ri-apple-fill"></i>
+                        <p>Continue with Apple</p>
+                    </div>
+
+                    <p class="text-center">OR</p>
+
+                    <div class="contact d-flex justify-content-center w-100 mb-5">
+                        <img src="images/indian flag.png" alt="">+91
+                        <input type="tel" placeholder="Enter Your Number">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <p class=" w-100 text-center">I Agree <span class="text-decoration-underline">Terms and
+                            Condition</span> and <span class="text-decoration-underline">privacy policy</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="offcanvas offcanvas-end fade" tabindex="-1" id="sidemenu">
+        <div class="offcanvas-content">
+            <div class="offcanvas-header border-bottom">
+                <h4>Hey!</h4>
+                <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="btn mb-5">
+                    <a href="" class="border border-danger text-danger w-100  btn" data-bs-target="#sign-in"
+                        data-bs-toggle="modal">Login / Register</a>
+                </div>
+                <div class="links d-flex justify-content-between">
+                    <i class="ri-notification-3-line"></i>
+                    <h6>Notification</h6>
+                    <i class="ri-arrow-drop-right-line"></i>
+                </div>
+                <div class="disabled d-flex justify-content-between">
+                    <i class="ri-briefcase-line text-black-50"></i>
+                    <h6 class=" text-black-50">Yours Orders</h6>
+                    <i class="ri-git-repository-private-line text-black-50"></i>
+                </div>
+                <div class="disabled d-flex justify-content-between">
+                    <i class="ri-computer-line text-black-50"></i>
+                    <h6 class=" text-black-50">Stream Library</h6>
+                    <i class="ri-git-repository-private-line text-black-50"></i>
+                </div>
+                <div class="links d-flex justify-content-between">
+                    <i class="ri-bank-card-line"></i>
+                    <h6>Play Creadit card</h6>
+                    <i class="ri-arrow-drop-right-line"></i>
+                </div>
+                <div class="links d-flex justify-content-between">
+                    <i class="ri-chat-4-line"></i>
+                    <h6>Help and support</h6>
+                    <i class="ri-arrow-drop-right-line"></i>
+                </div>
+                <div class="disabled d-flex justify-content-between">
+                    <i class="ri-settings-5-line text-black-50"></i>
+                    <h6 class=" text-black-50">Account and Seeting</h6>
+                    <i class="ri-git-repository-private-line text-black-50"></i>
+                </div>
+                <div class="links d-flex justify-content-between">
+                    <i class="ri-gift-line"></i>
+                    <h6>Rewards</h6>
+                    <i class="ri-arrow-drop-right-line"></i>
+                </div>
+                <div class="links d-flex justify-content-between">
+                    <i class="ri-file-list-3-line"></i>
+                    <h6>BookASmile</h6>
+                    <i class="ri-arrow-drop-right-line"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+                        <a href="movies.html" class="nav-link">Movies</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="stream.html" class="nav-link">Stream</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="event.html" class="nav-link">Events</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="play.html" class="nav-link">Plays</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="sports.html" class="nav-link">Sports</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="activities.html" class="nav-link">Activities</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="collapse navbar-collapse w-100 justify-content-end">
+                <ul class="navbar-nav">
+                    <li class="navbar-item">
+                        <a href="show.html" class="nav-link">LIstYourShow</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="corporates.html" class="nav-link">Corporates</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="offer.html" class="nav-link">Offers</a>
+                    </li>
+                    <li class="navbar-item">
+                        <a href="gift.html" class="nav-link">Gift cards</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <img src="images/playposter.avif" alt="" class="w-100">
+    </div>
+
+    <div class="container">
+        <h1 class="pt-5 pb-5">plays</h1>
+        <div class="container d-flex mb-3">
+            <div class="card text-danger rounded-pill p-2 ms-3">Theatre</div>
+            <div class="card text-danger rounded-pill p-2 ms-3">story telling</div>
+            <div class="card text-danger rounded-pill p-2 ms-3">Mime</div>
+            <div class="card text-danger rounded-pill p-2 ms-3">Monologue</div>
+        </div>
+        <div class="container">
+            <div class="row d-flex justify-content-evenly col-12 mb-5">
+                <div class="card col-3 border-0">
+                    <img src="images/play9.jpg" alt="" class="w-100">
+                </div>
+                <div class="card col-3 border-0">
+                    <img src="images/play8.jpg" alt="" class="w-100">
+                </div>
+                <div class="card col-3 border-0">
+                    <img src="images/play7.jpg" alt="" class="w-100">
+                </div>
+                <div class="card col-3 border-0">
+                    <img src="images/play6.jpg" alt="" class="w-100">
+                </div>
+            </div>
+            <div class="row d-flex justify-content-evenly col-12 mb-5">
+                <div class="card col-3 border-0">
+                    <img src="images/music4.avif" alt="">
+                </div>
+                <div class="card col-3 border-0">
+                    <img src="images/music5.avif" alt="">
+                </div>
+                <div class="card col-3 border-0">
+                    <img src="images/music6.avif" alt="">
+                </div>
+                <div class="card col-3 border-0">
+                    <img src="images/music7.avif" alt="">
+                </div>
+            </div>
+            <div class="row d-flex justify-content-evenly col-12 mb-5">
+                <div class="card col-3 border-0">
+                    <img src="images/music8.avif" alt="">
+                </div>
+                <div class="card col-3 border-0">
+                    <img src="images/music9.avif" alt="">
+                </div>
+                <div class="card col-3 border-0">
+                    <img src="images/premiere1.avif" alt="">
+                </div>
+                <div class="card col-3 border-0">
+                    <img src="images/play1.jpg" alt="">
+                </div>
+            </div>
+            <div class="row d-flex justify-content-evenly col-12 mb-5">
+                <div class="card col-3 border-0">
+                    <img src="images/play10.jpg" alt="">
+                </div>
+                <div class="card col-3 border-0">
+                    <img src="images/play2.jpg" alt="">
+                </div>
+                <div class="card col-3 border-0">
+                    <img src="images/play3.jpg" alt="">
+                </div>
+                <div class="card col-3 border-0">
+                    <img src="images/play4.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mb-5">
+        <div class="heading mt-3 d-flex justify-content-between">
+            <div class="fs-1">Your Trending Search</div>
+        </div>
+        <div class="container d-flex flex-wrap">
+            <div class="card ms-4 p-2 mb-2 bg-white">
+                <div class="fs-5 text-danger">Deadpool and Wolvorine</div>
+                <div class="fs-6 text-muted">Movies</div>
+            </div>
+            <div class="card ms-4 p-2 mb-2 bg-white">
+                <div class="fs-5 text-danger">Gharat Ganpati</div>
+                <div class="fs-6 text-muted">Movies</div>
+            </div>
+            <div class="card ms-4 p-2 mb-2 bg-white">
+                <div class="fs-5 text-danger">Stree 2</div>
+                <div class="fs-6 text-muted">Movies</div>
+            </div>
+            <div class="card ms-4 p-2 mb-2 bg-white">
+                <div class="fs-5 text-danger">Kalki</div>
+                <div class="fs-6 text-muted">Movies</div>
+            </div>
+            <div class="card ms-4 p-2 mb-2 bg-white">
+                <div class="fs-5 text-danger">It End with us</div>
+                <div class="fs-6 text-muted">Movies</div>
+            </div>
+            <div class="card ms-4 p-2 mb-2 bg-white">
+                <div class="fs-5 text-danger">Kill</div>
+                <div class="fs-6 text-muted">Movies</div>
+            </div>
+            <div class="card ms-4 p-2 mb-2 bg-white">
+                <div class="fs-5 text-danger">Inside Out 2</div>
+                <div class="fs-6 text-muted">Movies</div>
+            </div>
+            <div class="card ms-4 p-2 mb-2 bg-white">
+                <div class="fs-5 text-danger">Bad Newz</div>
+                <div class="fs-6 text-muted">Movies</div>
+            </div>
+            <div class="card ms-4 p-2 mb-2 bg-white">
+                <div class="fs-5 text-danger">Raayan</div>
+                <div class="fs-6 text-muted">Movies</div>
+            </div>
+            <div class="card ms-4 p-2 mb-2 bg-white">
+                <div class="fs-5 text-danger">Pushpa 2</div>
+                <div class="fs-6 text-muted">Movies</div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="container-fluid sub-footer w-100 h-auto d-lg-block">
+        <div class="container text-center d-flex justify-content-evenly">
+            <div class="box">
+                <i class="ri-customer-service-fill text-light fs-1"></i>
+                <div class="fs-6 text-light">24/7 customer care</div>
+            </div>
+            <div class="box">
+                <i class="ri-coupon-3-line text-light fs-1"></i>
+                <div class="fs-6 text-light">Resend Booking Confirmation</div>
+            </div>
+            <div class="box">
+                <i class="ri-mail-open-line text-light fs-1"></i>
+                <div class="fs-6 text-light">Subscribe to Newsletter</div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid footer w-100 h-auto d-lg-block">
+        <div class="container">
+            <div class="box mb-4 w-100">
+                <div class="fs-5 text-light">Movies Now Showing</div>
+                <div class="fs-6 text-light-50">
+                    <a href="" class="ps-2">Lorem, ipsum dolor.</a> |<a href="" class="ps-2">Lorem, ipsum dolor.</a> |<a href="" class="ps-2">lorem</a> | <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a>
+                </div>
+            </div>
+            <div class="box mb-4 w-100">
+                <div class="fs-5 text-light">Movies Now Showing</div>
+                <div class="fs-6 text-light-50">
+                    <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> | <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a>
+                </div>
+            </div>
+            <div class="box mb-4 w-100">
+                <div class="fs-5 text-light">Movies Now Showing</div>
+                <div class="fs-6 text-light-50">
+                    <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> | <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a>
+                </div>
+            </div>
+            <div class="box mb-4 w-100">
+                <div class="fs-5 text-light">Movies Now Showing</div>
+                <div class="fs-6 text-light-50">
+                    <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> | <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a>
+                </div>
+            </div>
+            <div class="box mb-4 w-100">
+                <div class="fs-5 text-light">Movies Now Showing</div>
+                <div class="fs-6 text-light-50">
+                    <a href="" class="ps-2">Lorem, ipsum dolor.</a> |<a href="" class="ps-2">Lorem, ipsum dolor.</a> |<a href="" class="ps-2">lorem</a> | <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a>
+                </div>
+            </div>
+            <div class="box mb-4 w-100">
+                <div class="fs-5 text-light">Movies Now Showing</div>
+                <div class="fs-6 text-light-50">
+                    <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> | <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a>
+                </div>
+            </div>
+            <div class="box mb-4 w-100">
+                <div class="fs-5 text-light">Movies Now Showing</div>
+                <div class="fs-6 text-light-50">
+                    <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> | <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a>
+                </div>
+            </div>
+            <div class="box mb-4 w-100">
+                <div class="fs-5 text-light">Movies Now Showing</div>
+                <div class="fs-6 text-light-50">
+                    <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> | <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a>
+                </div>
+            </div>
+            <div class="box mb-4 w-100">
+                <div class="fs-5 text-light">Movies Now Showing</div>
+                <div class="fs-6 text-light-50">
+                    <a href="" class="ps-2">Lorem, ipsum dolor.</a> |<a href="" class="ps-2">Lorem, ipsum dolor.</a> |<a href="" class="ps-2">lorem</a> | <a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a> |<a href="" class="ps-2">lorem</a>
+                </div>
+            </div>
+
+            <div class="logo d-flex justify-content-center w-100 mt-5">
+                <a href=""><img src="images/logowhite.svg" alt=""></a>
+            </div>
+
+            <div class="social w-100 text-dangerxt-center">
+                <div class="social-container d-flex text-danger text-center m-auto">
+                    <i class="ri-facebook-fill text-center"></i>
+                    <i class="ri-twitter-x-fill text-center"></i>
+                    <i class="ri-instagram-line"></i>
+                    <i class="ri-youtube-fill"></i>
+                    <i class="ri-pinterest-line"></i>
+                    <i class="ri-linkedin-box-fill"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        $(document).ready(function () {
+            $("#link").click(function () {
+                $(".hidden-cities").slideToggle();
+            })
+        })
+    </script>
+
+</body>
+</html>
